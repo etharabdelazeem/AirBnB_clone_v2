@@ -2,7 +2,8 @@
 """
 a script that starts a Flask web application.
 Routes:
-    /: Displays 'Hello HBNB!'
+    /: Displays 'Hello HBNB!'.
+    /hbnb: Displays 'HBNB'.
 """
 from flask import Flask
 
@@ -12,6 +13,10 @@ app = Flask(__name__)
 def hello_hbnb():
     """Displays 'Hello HBNB!'"""
     return "Hello HBNB!"
+@app.route("/hbnb", strict_slashes=False)
+def hbnb():
+    """Displays 'HBNB'"""
+    return "HBNB"
 
 
 if __name__ == '__main__':
